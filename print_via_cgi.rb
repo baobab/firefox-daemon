@@ -18,12 +18,8 @@ else
 end
 
 log.puts destination
-port = "4242"
 
-`cat #{ARGV[0]} | netcat -q 1 #{destination} #{port}`
-
-exit
-
+port = "81"
 url = "http://#{destination}:#{port}/cgi-bin/print.sh"
 #wget_command = "wget -q --output-document=/dev/null"
 wget_command = "wget --output-document=/dev/null"

@@ -1,0 +1,8 @@
+# In order to set this up on the server you will need to do a couple of things, such as:
+sudo adduser firefox
+cd /home/firefox
+sudo git init
+sudo git remote add origin git://YOURLOCALIP/var/www/firefox
+sudo git pull origin master
+sudo chown -R firefox:firefox .
+sudo /etc/init.d/firefox-daemon
