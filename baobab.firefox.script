@@ -5,31 +5,34 @@ childfinished() {
   child=1
 }
 
+FIREFOX_DIR = /var/www/firefox
+FIREFOX_PROFILE_DIR = /var/www/firefox/.mozilla/firefox
+
 while /bin/true; do
     # set display
     export DISPLAY=${IP}:0.0
     
     #cleanup existing profile
-    rm -rf ~/.mozilla/firefox/${IP}
-    mkdir -p ~/.mozilla/firefox/${IP}
+    rm -rf $FIREFOX_PROFILE_DIR/${IP}
+    mkdir -p $FIREFOX_PROFILE_DIR/${IP}
     
     #Create profile
-    tar -zxf ~/default.profile.tgz -C ~/.mozilla/firefox/${IP}
+    tar -zxf $FIREFOX_DIR/default.profile.tgz -C $FIREFOX_PROFILE_DIR/${IP}
     
     # rewrite profile.ini
-    echo "[General]" > ~/.mozilla/firefox/profiles.ini
-    echo "StartWithLastProfile=1" >> ~/.mozilla/firefox/profiles.ini
-    echo "" >> ~/.mozilla/firefox/profiles.ini
-    echo "[Profile0]" >> ~/.mozilla/firefox/profiles.ini
-    echo "Name=default" >> ~/.mozilla/firefox/profiles.ini
-    echo "IsRelative=1" >> ~/.mozilla/firefox/profiles.ini
-    echo "Path=none" >> ~/.mozilla/firefox/profiles.ini
-    echo "" >> ~/.mozilla/firefox/profiles.ini
-    echo "[Profile1]" >> ~/.mozilla/firefox/profiles.ini
-    echo "IsRelative=1" >> ~/.mozilla/firefox/profiles.ini
-    echo "Default=1" >> ~/.mozilla/firefox/profiles.ini
-    echo "Path=${IP}" >> ~/.mozilla/firefox/profiles.ini
-    echo "Name=${IP}" >> ~/.mozilla/firefox/profiles.ini
+    echo "[General]" > $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "StartWithLastProfile=1" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "[Profile0]" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "Name=default" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "IsRelative=1" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "Path=none" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "[Profile1]" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "IsRelative=1" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "Default=1" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "Path=${IP}" >> $FIREFOX_PROFILE_DIR/profiles.ini
+    echo "Name=${IP}" >> $FIREFOX_PROFILE_DIR/profiles.ini
 
     set -bm
     done=0
@@ -52,7 +55,7 @@ while /bin/true; do
     done;
 
     #cleanup existing profile
-    rm -rf ~/.mozilla/firefox/${IP}
+    rm -rf $FIREFOX_PROFILE_DIR/${IP}
 
     # ping machine to see if it's still there
     # (firefox crash)
