@@ -5,8 +5,8 @@ childfinished() {
   child=1
 }
 
-FIREFOX_DIR = /var/www/firefox
-FIREFOX_PROFILE_DIR = /var/www/firefox/.mozilla/firefox
+FIREFOX_DIR = /home/firefox
+FIREFOX_PROFILE_DIR = /home/firefox/.mozilla/firefox
 
 while /bin/true; do
     # set display

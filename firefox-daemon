@@ -1,1 +1,1 @@
-su - firefox -c "/var/www/firefox/baobab.firefox" &
+su - firefox -c "/home/firefox/baobab.firefox" &
