@@ -1,12 +1,11 @@
 #!/bin/bash
 IP=$1
+FIREFOX_DIR="/home/firefox"
+FIREFOX_PROFILE_DIR="/home/firefox/.mozilla/firefox"
 
 childfinished() {
   child=1
 }
-
-FIREFOX_DIR = /home/firefox
-FIREFOX_PROFILE_DIR = /home/firefox/.mozilla/firefox
 
 while /bin/true; do
     # set display
