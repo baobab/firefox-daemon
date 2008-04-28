@@ -1,0 +1,67 @@
+#!/bin/bash
+IP=$1
+
+childfinished() {
+  child=1
+}
+
+while /bin/true; do
+    # set display
+    export DISPLAY=${IP}:0.0
+    
+    #cleanup existing profile
+    rm -rf ~/.mozilla/firefox/${IP}
+    mkdir -p ~/.mozilla/firefox/${IP}
+    
+    #Create profile
+    tar -zxf ~/default.profile.tgz -C ~/.mozilla/firefox/${IP}
+    
+    # rewrite profile.ini
+    echo "[General]" > ~/.mozilla/firefox/profiles.ini
+    echo "StartWithLastProfile=1" >> ~/.mozilla/firefox/profiles.ini
+    echo "" >> ~/.mozilla/firefox/profiles.ini
+    echo "[Profile0]" >> ~/.mozilla/firefox/profiles.ini
+    echo "Name=default" >> ~/.mozilla/firefox/profiles.ini
+    echo "IsRelative=1" >> ~/.mozilla/firefox/profiles.ini
+    echo "Path=none" >> ~/.mozilla/firefox/profiles.ini
+    echo "" >> ~/.mozilla/firefox/profiles.ini
+    echo "[Profile1]" >> ~/.mozilla/firefox/profiles.ini
+    echo "IsRelative=1" >> ~/.mozilla/firefox/profiles.ini
+    echo "Default=1" >> ~/.mozilla/firefox/profiles.ini
+    echo "Path=${IP}" >> ~/.mozilla/firefox/profiles.ini
+    echo "Name=${IP}" >> ~/.mozilla/firefox/profiles.ini
+
+    set -bm
+    done=0
+    child=0
+    trap 'childfinished' SIGCHLD
+
+    /usr/bin/firefox --fullscreen -P ${IP} &
+
+    while (( done == 0 )); do
+        if (( child == 1 )); then
+            done=1;
+        else
+            # ping machine to see if it's still there
+            # (firefox crash)
+            results=`ping -w 3 ${IP} | grep "0 received"`
+            if [ -n "results" ]; then
+                exit
+            fi
+        fi
+    done;
+
+    #cleanup existing profile
+    rm -rf ~/.mozilla/firefox/${IP}
+
+    # ping machine to see if it's still there
+    # (firefox crash)
+    results=`ping -w 3 ${IP} | grep "0 received"`
+    # if string not empty (nonzero)
+    if [ -n "$results" ]; then
+      pid=`ps aux | grep firefox | grep ${IP} |	sed 's/  */ /g'  | cut -f2 -d' '`
+      kill -9 ${pid}
+    	exit
+    fi
+
+done;
