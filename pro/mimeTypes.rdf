@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Seq RDF:about="urn:mimetypes:root">
+    <RDF:li RDF:resource="urn:mimetype:application/label"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/label"
+                   NC:path="/home/firefox/print_via_cgi.rb"
+                   NC:prettyName="print_via_cgi.rb" />
+  <RDF:Description RDF:about="urn:mimetype:handler:application/label"
+                   NC:alwaysAsk="false"
+                   NC:saveToDisk="false"
+                   NC:useSystemDefault="false"
+                   NC:handleInternal="false">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/label"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:application/label"
+                   NC:value="application/label"
+                   NC:editable="true"
+                   NC:fileExtensions="lbl"
+                   NC:description="">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/label"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetypes">
+    <NC:MIME-types RDF:resource="urn:mimetypes:root"/>
+  </RDF:Description>
+</RDF:RDF>
