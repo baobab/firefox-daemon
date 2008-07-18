@@ -1,7 +1,0 @@
-scrollbar[orient="vertical"] scrollbarbutton,
-scrollbar[orient="vertical"] slider,
-scrollbar[orient="horizontal"] scrollbarbutton,
-scrollbar[orient="horizontal"] slider{
-  height: 40px !important;
-  width: 40px !important;
-}

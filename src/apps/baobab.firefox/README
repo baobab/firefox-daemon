@@ -1,0 +1,24 @@
+Create a user:
+
+useradd -m firefox
+passwd firefox
+
+Creating default profile:
+
+Delete existing firefox profiles
+Start firefox
+Setup profile, once done quit
+cd ~/.mozilla/firefox/default.profile.name
+cp -R . <your repo path>/default.profile
+
+and you're done.
+
+move baobab.firefox.script and default.profile.tgz to ~/baobab
+On machine start you should run baobab.firefox as the user
+/etc/init.d/local.start: su - baobab -c "baobab.firefox" &
+
+Once daemon is running, telnet to the machine on port 5840
+
+telnet machine 5840
+
+and firefox should keep respawning until machine is turned off
