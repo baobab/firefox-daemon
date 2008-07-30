@@ -13,8 +13,33 @@ cd src
 make
 cp apps/baobab.firefox/baobab.firefox* ..
 cd ..
-
 exit
 sudo cp firefox-daemon /etc/init.d/
 sudo /usr/sbin/update-rc.d -f firefox-daemon defaults
 sudo /etc/init.d/firefox-daemon
+
+# make sure you have a /usr/bin/firefox, you may have /usr/bin/firefox-2
+sudo ln /usr/bin/firefox-2 /usr/bin/firefox
+
+# make your /etc/dnsmasq.conf file look like this (replace x with your subnet)
+dhcp-range=192.168.x.100,192.168.x.150,12h
+
+# make your /etc/network/interfaces look like this:
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 192.168.x.203
+netmask 255.255.255.0
+gateway 192.168.x.1
+
+
+# You may want to debug
+ps aux | grep firefox
+sudo kill XXXX
+sudo su firefox
+cd ~
+./baobab.firefox
+<connect>
+

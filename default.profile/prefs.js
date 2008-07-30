@@ -10,10 +10,6 @@
  */
 
 user_pref("app.update.enabled", false);
-user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1182338655);
-user_pref("app.update.lastUpdateTime.background-update-timer", 1182338654);
-user_pref("app.update.lastUpdateTime.blocklist-background-update-timer", 1182338655);
-user_pref("app.update.lastUpdateTime.search-engine-update-timer", 1182338657);
 user_pref("app.update.mode", 0);
 user_pref("browser.cache.disk.capacity", 10000);
 user_pref("browser.cache.memory.enable", false);
@@ -44,7 +40,7 @@ user_pref("extensions.autohide.noContext", false);
 user_pref("extensions.autohide.statBar", false);
 user_pref("extensions.autohide.statFloat", false);
 user_pref("extensions.checkCompatibility", false);
-user_pref("extensions.lastAppVersion", "2.0");
+user_pref("extensions.lastAppVersion", "2.0.0.14");
 user_pref("extensions.update.enabled", false);
 user_pref("extensions.update.notifyUser", false);
 user_pref("intl.charsetmenu.browser.cache", "ISO-8859-1, UTF-8");
@@ -68,13 +64,6 @@ user_pref("security.warn_submit_insecure.show_once", false);
 user_pref("security.warn_viewing_mixed", false);
 user_pref("security.warn_viewing_mixed.show_once", false);
 user_pref("signon.rememberSignons", false);
-user_pref("urlclassifier.keyupdatetime.https://sb-ssl.google.com/safebrowsing/getkey?client=Firefox2.0&", 1182425060);
-user_pref("urlclassifier.tableversion.goog-black-url", "1.11708");
-user_pref("urlclassifier.tableversion.goog-white-domain", "1.23");
-user_pref("urlclassifier.tableversion.goog-white-url", "1.371");
-user_pref("xpinstall.whitelist.add", "");
-user_pref("xpinstall.whitelist.add.103", "");
-user_pref("xpinstall.whitelist.required", false);
 
 // Allow the hosts below to execute privileged script without warnings
 user_pref("signed.applets.codebase_principal_support", true);
