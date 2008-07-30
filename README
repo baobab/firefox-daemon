@@ -1,8 +1,20 @@
+# Requisites
+sudo apt-get install dnsmasq firefox2 (firefox-2)?
+sudo apt-get install xinit xauth 
+
 # In order to set this up on the server you will need to do a couple of things, such as:
 sudo adduser firefox
-cd /home/firefox
-sudo git init
-sudo git remote add origin git://YOURLOCALIP/var/www/firefox
-sudo git pull origin master
-sudo chown -R firefox:firefox .
+sudo su firefox
+cd ~
+git init
+git remote add origin git://YOURLOCALIP/var/www/firefox
+git pull origin master
+cd src
+make
+cp apps/baobab.firefox/baobab.firefox* ..
+cd ..
+
+exit
+sudo cp firefox-daemon /etc/init.d/
+sudo /usr/sbin/update-rc.d -f firefox-daemon defaults
 sudo /etc/init.d/firefox-daemon
