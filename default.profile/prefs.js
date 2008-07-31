@@ -10,21 +10,50 @@
  */
 
 user_pref("app.update.enabled", false);
+user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1217501092);
+user_pref("app.update.lastUpdateTime.background-update-timer", 1217501086);
+user_pref("app.update.lastUpdateTime.blocklist-background-update-timer", 1217501086);
+user_pref("app.update.lastUpdateTime.microsummary-generator-update-timer", 1217501092);
+user_pref("app.update.lastUpdateTime.search-engine-update-timer", 1217501092);
 user_pref("app.update.mode", 0);
 user_pref("browser.cache.disk.capacity", 10000);
 user_pref("browser.cache.memory.enable", false);
+user_pref("browser.dom.window.dump.enabled", true);
 user_pref("browser.download.manager.retention", 0);
 user_pref("browser.download.manager.showWhenStarting", false);
 user_pref("browser.formfill.enable", false);
 user_pref("browser.history_expire_days", 0);
 user_pref("browser.history_expire_days.mirror", 9);
+user_pref("browser.migration.version", 1);
+user_pref("browser.places.importBookmarksHTML", false);
+user_pref("browser.places.importDefaults", false);
+user_pref("browser.places.leftPaneFolderId", -1);
+user_pref("browser.places.migratePostDataAnnotations", false);
+user_pref("browser.places.smartBookmarksVersion", 1);
+user_pref("browser.places.updateRecentTagsUri", false);
 user_pref("browser.preferences.advanced.selectedTabIndex", 2);
 user_pref("browser.safebrowsing.enabled", false);
 user_pref("browser.search.update", false);
 user_pref("browser.sessionstore.enabled", false);
 user_pref("browser.startup.homepage", "http://localhost");
+user_pref("browser.tabs.forceHide", false);
 user_pref("browser.tabs.warnOnClose", false);
 user_pref("browser.tabs.warnOnOpen", false);
+user_pref("capability.principal.codebase.p1.granted", "UniversalXPConnect UniversalBrowserWrite");
+user_pref("capability.principal.codebase.p1.id", "http://localhost");
+user_pref("capability.principal.codebase.p1.subjectName", "");
+user_pref("capability.principal.codebase.p2.granted", "UniversalXPConnect UniversalBrowserWrite");
+user_pref("capability.principal.codebase.p2.id", "http://localhost:3000");
+user_pref("capability.principal.codebase.p2.subjectName", "");
+user_pref("capability.principal.codebase.p3.granted", "UniversalXPConnect UniversalBrowserWrite");
+user_pref("capability.principal.codebase.p3.id", "http://localhost:8000");
+user_pref("capability.principal.codebase.p3.subjectName", "");
+user_pref("capability.principal.codebase.p4.granted", "UniversalXPConnect UniversalBrowserWrite");
+user_pref("capability.principal.codebase.p4.id", "http://bart");
+user_pref("capability.principal.codebase.p4.subjectName", "");
+user_pref("capability.principal.codebase.p5.granted", "UniversalXPConnect UniversalBrowserWrite");
+user_pref("capability.principal.codebase.p5.id", "http://bwemba");
+user_pref("capability.principal.codebase.p5.subjectName", "");
 user_pref("extensions.autohide.bars.PersonalToolbar", false);
 user_pref("extensions.autohide.bars.PersonalToolbar.always", false);
 user_pref("extensions.autohide.bars.nav-bar", false);
@@ -40,7 +69,9 @@ user_pref("extensions.autohide.noContext", false);
 user_pref("extensions.autohide.statBar", false);
 user_pref("extensions.autohide.statFloat", false);
 user_pref("extensions.checkCompatibility", false);
-user_pref("extensions.lastAppVersion", "2.0.0.14");
+user_pref("extensions.checkUpdateSecurity", false);
+user_pref("extensions.enabledItems", "{DD43485F-44CC-4452-A6C6-69356A7E33DA}:2.0.0,langpack-en-GB@xulrunner-1.9.ubuntu.com:1.9.0.1,ubufox@ubuntu.com:0.5,firebug@software.joehewitt.com:1.2.0a21X,langpack-en-GB@firefox-3.0.ubuntu.com:3.0.1,{972ce4c6-7e08-4474-a285-3208198ce6fd}:2.0");
+user_pref("extensions.lastAppVersion", "3.0.1");
 user_pref("extensions.update.enabled", false);
 user_pref("extensions.update.notifyUser", false);
 user_pref("intl.charsetmenu.browser.cache", "ISO-8859-1, UTF-8");
@@ -63,29 +94,6 @@ user_pref("security.warn_submit_insecure", false);
 user_pref("security.warn_submit_insecure.show_once", false);
 user_pref("security.warn_viewing_mixed", false);
 user_pref("security.warn_viewing_mixed.show_once", false);
-user_pref("signon.rememberSignons", false);
-
-// Allow the hosts below to execute privileged script without warnings
 user_pref("signed.applets.codebase_principal_support", true);
-
-// Allow localhost to execute privileged scripts
-user_pref("capability.principal.codebase.p1.granted", "UniversalXPConnect UniversalBrowserWrite");
-user_pref("capability.principal.codebase.p1.id", "http://localhost");
-user_pref("capability.principal.codebase.p1.subjectName", "");
-
-user_pref("capability.principal.codebase.p2.granted", "UniversalXPConnect UniversalBrowserWrite");
-user_pref("capability.principal.codebase.p2.id", "http://localhost:3000");
-user_pref("capability.principal.codebase.p2.subjectName", "");
-
-user_pref("capability.principal.codebase.p3.granted", "UniversalXPConnect UniversalBrowserWrite");
-user_pref("capability.principal.codebase.p3.id", "http://localhost:8000");
-user_pref("capability.principal.codebase.p3.subjectName", "");
-
-user_pref("capability.principal.codebase.p4.granted", "UniversalXPConnect UniversalBrowserWrite");
-user_pref("capability.principal.codebase.p4.id", "http://bart");
-user_pref("capability.principal.codebase.p4.subjectName", "");
-
-user_pref("capability.principal.codebase.p5.granted", "UniversalXPConnect UniversalBrowserWrite");
-user_pref("capability.principal.codebase.p5.id", "http://bwemba");
-user_pref("capability.principal.codebase.p5.subjectName", "");
-
+user_pref("signon.rememberSignons", false);
+user_pref("urlclassifier.keyupdatetime.https://sb-ssl.google.com/safebrowsing/newkey", 1220093095);

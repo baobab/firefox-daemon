@@ -4,16 +4,50 @@
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <RDF:Description RDF:about="urn:mozilla:item:{DD43485F-44CC-4452-A6C6-69356A7E33DA}"
                    NS1:installLocation="app-profile"
-                   NS1:version="1.1.5"
+                   NS1:version="2.0.0"
+                   NS1:updateURL="http://www.krickelkrackel.de/autohide/update.rdf"
+                   NS1:optionsURL="chrome://autohide/content/ahPref.xul"
+                   NS1:iconURL="chrome://autohide/skin/icon.png"
                    NS1:name="Autohide"
                    NS1:description="Tweaks for Full Screen. Eala Frya Fresena!"
                    NS1:creator="Jochen"
-                   NS1:homepageURL="http://www.krickelkrackel.de/autohide/"
-                   NS1:updateURL="http://www.krickelkrackel.de/autohide/update.rdf"
-                   NS1:optionsURL="chrome://autohide/content/ahPref.xul"
-                   NS1:iconURL="chrome://autohide/skin/icon.png">
+                   NS1:homepageURL="http://www.krickelkrackel.de/autohide/">
     <NS1:type NC:parseType="Integer">2</NS1:type>
-    <NS1:targetApplication RDF:resource="rdf:#$OH4DN2"/>
+    <NS1:targetApplication RDF:resource="rdf:#$JH7Of2"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$QH7Of2"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="3.0"
+                   NS1:maxVersion="3.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:item:firebug@software.joehewitt.com"
+                   NS1:installLocation="app-global"
+                   NS1:version="1.2.0a21X"
+                   NS1:updateURL="http://getfirebug.com/releases/firebug/1.2/update.rdf"
+                   NS1:iconURL="chrome://firebug/content/firebug.png"
+                   NS1:updateKey="ToBeReplaceByAKeyFromMcCoy"
+                   NS1:name="Firebug"
+                   NS1:description="Web Development Evolved."
+                   NS1:creator="Joe Hewitt"
+                   NS1:homepageURL="http://www.getfirebug.com/">
+    <NS1:type NC:parseType="Integer">2</NS1:type>
+    <NS1:contributor>1.1 and 1.2 enhancements: John J. Barton (IBM Almaden)</NS1:contributor>
+    <NS1:contributor>Jan Odvarko (All Peers Inc.)</NS1:contributor>
+    <NS1:contributor>Max Stepanov (Aptana Inc.)</NS1:contributor>
+    <NS1:targetApplication RDF:resource="rdf:#$cI7Of2"/>
+    <NS1:targetApplication RDF:resource="rdf:#$dI7Of2"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:item:ubufox@ubuntu.com"
+                   NS1:installLocation="app-global"
+                   NS1:version="0.5"
+                   NS1:iconURL="chrome://ubufox/content/ubuntulogo32.png"
+                   NS1:name="Ubuntu Firefox Modifications"
+                   NS1:description="Ubuntu configuration defaults and apt support for firefox extensions/plugins."
+                   NS1:creator="Canonical Ltd.">
+    <NS1:type NC:parseType="Integer">2</NS1:type>
+    <NS1:contributor>Alexander Sack &lt;asac@ubuntu.com&gt;</NS1:contributor>
+    <NS1:contributor>Sasa Bodiroza &lt;jazzva@gmail.com&gt;</NS1:contributor>
+    <NS1:contributor>Daniel Abramov &lt;ex@vingrad.ru&gt;</NS1:contributor>
+    <NS1:targetApplication RDF:resource="rdf:#$sI7Of2"/>
   </RDF:Description>
   <RDF:Description RDF:about="urn:mozilla:item:{972ce4c6-7e08-4474-a285-3208198ce6fd}"
                    NS1:installLocation="app-global"
@@ -28,46 +62,52 @@
     <NS1:type NC:parseType="Integer">4</NS1:type>
     <NS1:targetApplication RDF:resource="rdf:#$40ith"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$S+hth"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="2.0"
-                   NS1:maxVersion="2.0.99" />
-  <RDF:Description RDF:about="urn:mozilla:item:desktop@google.com"
-                   NS1:installLocation="app-global"
-                   NS1:version="1.0.1"
-                   NS1:name="Google Desktop for Firefox"
-                   NS1:description="Google Desktop Plugin For Firefox."
-                   NS1:creator="Google Inc"
-                   NS1:homepageURL="http://desktop.google.com/">
-    <NS1:type NC:parseType="Integer">2</NS1:type>
-    <NS1:targetApplication RDF:resource="rdf:#$30ith"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$OH4DN2"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="1.5"
-                   NS1:maxVersion="2.0.0.*" />
-  <RDF:Description RDF:about="urn:mozilla:item:langpack-en-GB@firefox.mozilla.org"
-                   NS1:installLocation="app-global"
-                   NS1:version="2.0"
-                   NS1:name="English (GB) Language Pack"
-                   NS1:creator="Mark Tyndall">
+  <RDF:Description RDF:about="rdf:#$dI7Of2"
+                   NS1:id="{a463f10c-3994-11da-9945-000d60ca027b}"
+                   NS1:minVersion="0.5"
+                   NS1:maxVersion="1.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:item:langpack-en-GB@xulrunner-1.9.ubuntu.com"
+                   NS1:installLocation="gre-global"
+                   NS1:version="1.9.0.1"
+                   NS1:name="Xulrunner (en-GB)"
+                   NS1:creator="http://translations.launchpad.net">
     <NS1:type NC:parseType="Integer">8</NS1:type>
-    <NS1:contributor>David Bartlett</NS1:contributor>
-    <NS1:contributor>Constantine Murenin</NS1:contributor>
-    <NS1:targetApplication RDF:resource="rdf:#$S+hth"/>
+    <NS1:targetApplication RDF:resource="rdf:#$zI7Of2"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$30ith"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="1.5"
-                   NS1:maxVersion="2.0.0.*" />
   <RDF:Description RDF:about="rdf:#$40ith"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="2.0.0.3"
                    NS1:maxVersion="2.0.0.3" />
+  <RDF:Description RDF:about="rdf:#$JH7Of2"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="1.5"
+                   NS1:maxVersion="4.0.0.*" />
+  <RDF:Description RDF:about="rdf:#$zI7Of2"
+                   NS1:id="toolkit@mozilla.org"
+                   NS1:minVersion="1.9"
+                   NS1:maxVersion="1.9.0.*" />
+  <RDF:Description RDF:about="rdf:#$cI7Of2"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="1.5"
+                   NS1:maxVersion="3.0.*" />
+  <RDF:Description RDF:about="rdf:#$sI7Of2"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="1.5"
+                   NS1:maxVersion="3.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:item:langpack-en-GB@firefox-3.0.ubuntu.com"
+                   NS1:installLocation="app-global"
+                   NS1:version="3.0.1"
+                   NS1:name="Firefox (en-GB)"
+                   NS1:creator="http://translations.launchpad.net">
+    <NS1:type NC:parseType="Integer">8</NS1:type>
+    <NS1:targetApplication RDF:resource="rdf:#$QH7Of2"/>
+  </RDF:Description>
   <RDF:Seq RDF:about="urn:mozilla:item:root">
     <RDF:li RDF:resource="urn:mozilla:item:{DD43485F-44CC-4452-A6C6-69356A7E33DA}"/>
-    <RDF:li RDF:resource="urn:mozilla:item:langpack-en-GB@firefox.mozilla.org"/>
+    <RDF:li RDF:resource="urn:mozilla:item:firebug@software.joehewitt.com"/>
     <RDF:li RDF:resource="urn:mozilla:item:{972ce4c6-7e08-4474-a285-3208198ce6fd}"/>
-    <RDF:li RDF:resource="urn:mozilla:item:desktop@google.com"/>
+    <RDF:li RDF:resource="urn:mozilla:item:langpack-en-GB@firefox-3.0.ubuntu.com"/>
+    <RDF:li RDF:resource="urn:mozilla:item:ubufox@ubuntu.com"/>
+    <RDF:li RDF:resource="urn:mozilla:item:langpack-en-GB@xulrunner-1.9.ubuntu.com"/>
   </RDF:Seq>
 </RDF:RDF>
