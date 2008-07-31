@@ -37,7 +37,7 @@ while /bin/true; do
     child=0
     trap 'childfinished' SIGCHLD
 
-    /usr/bin/firefox -P ${IP} &
+    /usr/bin/firefox -fullscreen -P ${IP} &
 
     while (( done == 0 )); do
         if (( child == 1 )); then
