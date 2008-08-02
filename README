@@ -24,6 +24,8 @@ sudo ln /usr/bin/firefox-2 /usr/bin/firefox
 # make your /etc/dnsmasq.conf file look like this (replace x with your subnet)
 dhcp-range=192.168.x.100,192.168.x.150,12h
 
+# remove everything from your /etc/resolv.conf
+
 # make your /etc/network/interfaces look like this:
 auto lo
 iface lo inet loopback
