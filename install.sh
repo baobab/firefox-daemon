@@ -10,6 +10,28 @@ read -p "Enter new hostname
 " -r NEWNAME 
 echo "$NEWNAME" > /etc/hostname
 
+# we need to remove everything from your /etc/resolv.conf but we need to resolve some domains for downlads for now`
+echo "nameserver 196.216.8.4" > /etc/resolv.conf
+
+# make your /etc/network/interfaces look like this:
+
+echo "
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 192.168.5.200
+netmask 255.255.255.0
+gateway 192.168.5.1" > /etc/network/interfaces
+
+#setup hosts file
+echo "
+192.168.5.200 bart localhost $NEWNAME" >> /etc/hosts
+
+
+
+
 # Requisites
 
 # Bind9 conflicts with dnsmasq
@@ -18,7 +40,7 @@ echo "Running: $command"
 read -p "Press any key to begin" -r A
 $command
 
-command="apt-get install dnsmasq firefox-2 build-essential git-core"
+command="apt-get install dnsmasq firefox-2 build-essential git-core wvdial" 
 echo "Running: $command"
 read -p "Press any key to begin" -r A
 $command
@@ -125,25 +147,6 @@ $command
 
 # make your /etc/dnsmasq.conf file look like this (replace x with your subnet)
 echo "dhcp-range=192.168.5.100,192.168.5.150,12h" >  /etc/dnsmasq.conf
-
-# we need to remove everything from your /etc/resolv.conf but we need to resolve some domains for downlads for now`
-echo "nameserver 196.216.8.4" > /etc/resolv.conf
-
-# make your /etc/network/interfaces look like this:
-
-echo "
-auto lo
-iface lo inet loopback
-
-auto eth0
-iface eth0 inet static
-address 192.168.5.200
-netmask 255.255.255.0
-gateway 192.168.5.1" > /etc/network/interfaces
-
-#setup hosts file
-echo "
-192.168.5.200 bart localhost $NEWNAME" >> /etc/hosts
 
 # TODO: merge these scripts
 #echo "get second install script"
