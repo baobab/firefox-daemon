@@ -84,6 +84,11 @@ echo "Running: $command"
 read -p "Press any key to continue" -r A
 $command
 
+command="sudo gem install json --verbose"
+echo "Running: $command"
+read -p "Press any key to continue" -r A
+$command
+
    
 echo "    
 ## At the end you will need to input the mysql root password
