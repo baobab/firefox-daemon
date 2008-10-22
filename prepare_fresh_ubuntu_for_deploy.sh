@@ -167,6 +167,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq7R5LvOBW5U1Vgn8ce/WDYr6A2/stqDvMwCAlZFqpBZE
 " >> /home/deploy/.ssh/authorized_keys
 
 chmod 600 /home/deploy/.ssh/authorized_keys
+chown deploy /home/deploy/.ssh/authorized_keys
               
 echo "## On the server, create the root project folder (our project is called 'bart')"
 command="mkdir /var/www/bart"
@@ -213,13 +214,19 @@ echo "
                  cap deploy:setup
                  cap deploy
                   
-                  cap nginx:setup
-                  cap nginx:start
+                 cap nginx:setup
+                 cap nginx:start
  
-                   * run the db/migrate scripts
-                   * run the bootstrap
-                    
-                    cap deploy:restart
+                 * On the SERVER, run these db/migrate and bootstrap scripts while in /var/www/bart/current
+echo 'DELETE FROM schema_migrations; DROP TABLE sessions; DROP TABLE weight_for_heights;' | mysql -u {dbusername} -p {database}
+ 
+RAILS_ENV=production rake db:migrate
+RAILS_ENV=production rake openmrs:bootstrap:load:defaults
+ 
+RAILS_ENV=production script/runner 'PatientAdherenceDate.reset;PatientPrescriptionTotal.reset;PatientWholeTabletsRemainingAndBrought.reset;PatientHistoricalOutcome.reset'
+           
+                  * On your LOCAL MACHINE
+                  cap deploy:restart
                      
 # ------------- Firefox
 # READ the firefox README
